@@ -6,7 +6,7 @@ var UserProfile = React.createClass({
       <div>
         UserProfile <br />
         Username: {this.props.username} <br />
-        Bio: {this.props.bio}
+        Bio: {this.props.bio.name}
       </div>
     );
   }

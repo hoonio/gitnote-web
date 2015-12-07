@@ -6,7 +6,7 @@ var Repos = React.createClass({
       <div>
         Repos <br />
         Username: {this.props.username} <br />
-        Bio: {this.props.bio}
+        Repos: {this.props.repos}
       </div>
     );
   }

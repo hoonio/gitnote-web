@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/hoonio/notetaker#readme",
   "dependencies": {
+    "firebase": "^2.3.2",
     "history": "^1.13.1",
     "react": "^0.14.3",
-    "react-router": "^0.13.5"
+    "react-router": "^0.13.5",
+    "reactfire": "^0.4.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.30",
