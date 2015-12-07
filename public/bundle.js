@@ -22977,8 +22977,8 @@
 	var UserProfile = __webpack_require__(204);
 	var Repos = __webpack_require__(205);
 	var Notes = __webpack_require__(206);
-	var ReactFireMixin = __webpack_require__(207);
-	var Firebase = __webpack_require__(208);
+	var ReactFireMixin = __webpack_require__(208);
+	var Firebase = __webpack_require__(209);
 
 	var Profile = React.createClass({
 	  displayName: 'Profile',
@@ -23037,6 +23037,10 @@
 	var UserProfile = React.createClass({
 	  displayName: 'UserProfile',
 
+	  propTypes: {
+	    username: React.PropTypes.string.isRequired,
+	    bio: React.PropTypes.object.isRequired
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -23066,6 +23070,10 @@
 	var Repos = React.createClass({
 	  displayName: 'Repos',
 
+	  propTypes: {
+	    username: React.PropTypes.string.isRequired,
+	    repos: React.PropTypes.array.isRequired
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -23091,11 +23099,15 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var NotesList = __webpack_require__(209);
+	var NotesList = __webpack_require__(207);
 
 	var Notes = React.createClass({
 	  displayName: 'Notes',
 
+	  propTypes: {
+	    username: React.PropTypes.string.isRequired,
+	    notes: React.PropTypes.array.isRequired
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -23115,6 +23127,35 @@
 
 /***/ },
 /* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var NotesList = React.createClass({
+	  displayName: "NotesList",
+
+	  render: function render() {
+	    var notes = this.props.notes.map(function (note, index) {
+	      return React.createElement(
+	        "li",
+	        { className: "list-group-item", key: index },
+	        note
+	      );
+	    });
+	    return React.createElement(
+	      "ul",
+	      { className: "list-group" },
+	      notes
+	    );
+	  }
+	});
+
+	module.exports = NotesList;
+
+/***/ },
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -23284,7 +23325,7 @@
 	}));
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.3.2
@@ -23556,35 +23597,6 @@
 
 	module.exports = Firebase;
 
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var React = __webpack_require__(1);
-
-	var NotesList = React.createClass({
-	  displayName: "NotesList",
-
-	  render: function render() {
-	    var notes = this.props.notes.map(function (note, index) {
-	      return React.createElement(
-	        "li",
-	        { className: "list-group-item", key: index },
-	        note
-	      );
-	    });
-	    return React.createElement(
-	      "ul",
-	      { className: "list-group" },
-	      notes
-	    );
-	  }
-	});
-
-	module.exports = NotesList;
 
 /***/ }
 /******/ ]);
